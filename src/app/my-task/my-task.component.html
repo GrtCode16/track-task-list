@@ -1,0 +1,44 @@
+<div>
+  <h2>Task Detail</h2>
+  <form class="example-form" #form="ngForm">
+    <p>Enter Task Detail</p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        placeholder="Enter task title"
+        name="taskTitle"
+        [(ngModel)]="taskTitle"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Task Description</mat-label>
+      <textarea
+        matInput
+        placeholder="Enter task detail"
+        [(ngModel)]="taskDesc"
+        name="taskDesc"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Task Date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="dp"
+        [formControl]="date"
+        [(ngModel)]="taskDate"
+      />
+      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+      <mat-datepicker #dp></mat-datepicker>
+    </mat-form-field>
+    <mat-checkbox class="example-full-width" [(ngModel)]="isCompleted" name="is-completed">Is Completed</mat-checkbox>
+    <div class="footer-section">
+      <button mat-button (click)="resetForm()">Reset</button>
+      <button mat-raised-button color="primary" (click)="saveTask()">
+        Save Task
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,23 @@
+Steps to Create Task:
+
+* Application navigates to Task Detail screen by default
+* User is expected to enter the task detail
+* Title field is mandatory in the form to fill
+* User can enter the below list of fields
+    - Title
+    - Description
+    - Task Date, defaulted to today
+    - Task completion status - Defaulted to false
+* User is shown a notification of submititng the form without providing the mandaotry field
+* User can also reset the form
+* User is allowed to save the task on entering required values
+
+Task List features:
+
+* Default there wont be any task listed
+* Allowing the user to choose the date range
+* Listing the completed tasks under the date range selected
+
+Other Features:
+* Provided the Header bar to navigate between the screens (Task List & Task)
+* Provided the Sidebar to perform the navigation said above

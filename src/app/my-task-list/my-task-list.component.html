@@ -1,0 +1,29 @@
+<div>
+  <h2>Task List</h2>
+  <form class="task-list-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+        >
+        <input matStartDate formControlName="start" placeholder="Start date" />
+        <input
+          matEndDate
+          formControlName="end"
+          placeholder="End date"
+          (dateChange)="addEvent()"
+        />
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+
+    <mat-list role="list" *ngIf="tasks.length">
+      <ng-container *ngFor="let task of tasks; index as i">
+        <mat-list-item role="listitem"
+          >{{ i + 1 }}. {{ task.title }} - {{ task.desc }}</mat-list-item
+        >
+      </ng-container>
+    </mat-list>
+    <p *ngIf="!tasks.length">No Tasks between the range {{ dateRange() }}</p>
+  </form>
+</div>

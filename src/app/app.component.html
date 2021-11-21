@@ -1,0 +1,36 @@
+<div>
+  <mat-toolbar color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <a mat-button class="companyName" routerLink="/">
+      <span>Task Tracker</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button routerLink="/">My Task</a>
+      <a mat-button routerLink="/my-task-list">My Task List</a>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav
+      color="primary"
+      #sidenav
+      fxLayout="column"
+      mode="push"
+      opened="false"
+      fxHide.gt-sm="true"
+    >
+      <div class="column">
+        <a mat-button routerLink="/">My Task</a>
+        <a mat-button routerLink="/my-task-list">My Task List</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
